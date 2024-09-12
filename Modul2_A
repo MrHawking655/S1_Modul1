@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int pilihan;
+    double size, luas, keliling;
+
+    cout << "Hitung Luas dan Keliling Bangun Datar\n";
+    cout << "=====================================\n";
+    cout << "\n";
+    cout << "1. Persegi\n";
+    cout << "2. Persegi Panjang\n";
+    cout << "3. Lingkaran\n";
+    cout << "Masukkan pilihan [1..3] : "; cin >> pilihan;
+    system("cls");
+
+    switch(pilihan){
+        case 1 :
+        int hitung;
+            cout << "Bangun Datar Persegi\n";
+            cout << "\n";
+            cout << "Masukkan Ukuran Sisi: "; cin >> size;
+            cout << "\n";
+                cout << "1. Hitung Luas\n";
+                cout << "2. Hitung Keliling\n";
+                cout << "3. Hitung Luas dan keliling\n";
+                cout << "Masukkan pilihan [1..3] : "; cin >> hitung;
+                cout << "\n";
+                switch(hitung){
+                    case 1 :
+                        luas = size * size;
+                        cout << "Luas = " << luas << "\n";
+                        break;
+                    case 2 :
+                        keliling = 4 * size;
+                        cout << "Keliling = " << keliling << "\n";
+                        break;
+                    case 3 :
+                        cout << "Luas = " << luas << "\n";
+                        cout << "Keliling = " << keliling << "\n";
+                       break;
+                    default :
+                    cout << "Error\n";
+                    break;
+                }
+                break;
+        case 2 :
+            int hitung2;
+            double panjang, lebar, luaspj, kelilingpj;
+            cout << "Bangun Datar Persegi Panjang\n";
+            cout << "\n";
+            cout << "Masukkan ukuran panjang: "; cin >> panjang;
+            cout << "Masukkan ukuran lebar: "; cin >> lebar;
+            cout << "\n";
+                cout << "1. Hitung Luas\n";
+                cout << "2. Hitung Keliling\n";
+                cout << "3. Hitung Luas dan keliling\n";
+                cout << "Masukkan pilihan [1..3] : "; cin >> hitung2;
+                cout << "\n";
+                switch(hitung2){
+                    case 1 :
+                        luaspj = panjang * lebar;
+                        cout << "Luas = " << luaspj << "\n";
+                        break;
+                    case 2 :
+                        kelilingpj = (2 * panjang) + (2 * lebar);
+                        cout << "Keliling = " << kelilingpj << "\n";
+                        break;
+                    case 3 :
+                        cout << "Luas = " << luaspj << "\n";
+                        cout << "Keliling = " << kelilingpj << "\n";
+                       break;
+                    default :
+                    cout << "Error\n";
+                    break;
+                }
+                break;
+        case 3 :
+            int hitung3;
+            double jari;
+            float luasling, kelilingling;
+            cout << "Bangun Datar Lingkaran\n";
+            cout << "\n";
+            cout << "Masukkan ukuran jari-jari: "; cin >> jari;
+            cout << "\n";
+                cout << "1. Hitung Luas\n";
+                cout << "2. Hitung Keliling\n";
+                cout << "3. Hitung Luas dan keliling\n";
+                cout << "Masukkan pilihan [1..3] : "; cin >> hitung3;
+                cout << "\n";
+                switch(hitung3){
+                    case 1 :
+                        luasling = 3.14 * jari * jari;
+                        cout << "Luas = " << luasling << "\n";
+                        break;
+                    case 2 :
+                        kelilingling = 2 * 3.14 * jari;
+                        cout << "Keliling = " << kelilingling << "\n";
+                        break;
+                    case 3 :
+                        cout << "Luas = " << 3.14 * jari * jari << "\n";
+                        cout << "Keliling = " << 2 * 3.14 * jari << "\n";
+                       break;
+                    default :
+                    cout << "Error\n";
+                    break;
+                }
+                break;
+            default :
+            cout << "Error\n";
+            break;
+    }
+}
