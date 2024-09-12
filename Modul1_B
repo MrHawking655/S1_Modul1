@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int umur;
+    int tahun_lahir;
+
+    cout << "Masukkan tahun lahir : "; cin >> tahun_lahir;
+    cout << "\n";
+
+    umur = 2024 - tahun_lahir;
+
+    cout << "Hasil:\n";
+    cout << "Umur Anda: " << umur << " Tahun\n";
+    cout << "Vaksin yang cocok: \n";
+
+    if (umur >= 12){
+        cout << "- Pfizer 12+ (if ke-1)\n";
+    } if (umur >= 18) {
+            cout << "- Moderna 18+ (if ke-2)\n";
+            cout << "- Sinovac 18+ \n";
+                if(umur <= 55){ // 1969 = 55 tahun 1965 = 59 tahun 1944 80
+                    cout << "- AstraZeneca 18-55 (if ke-3)\n";
+                    } if (umur <= 59){
+                        cout << "- Novavax 18-59 (if ke-4)\n";
+                        } if (umur <= 80){
+                            cout << "- Sinopharm 18-80 (if ke-5)\n";
+        }
+    } else if(umur < 12) {
+        cout << "- Tidak ada vaksin yang cocok!(else)\n";
+    }
+}
