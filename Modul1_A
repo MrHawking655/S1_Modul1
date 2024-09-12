@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+// satuan panjang panjang 
+int main(){
+    double cm;
+    double kg;
+    double m;
+    cout << "Masukkan tinggi badan (cm) : "; cin >> cm;
+    cout << "Masukkan berat badan (kg) : "; cin >> kg;
+    cout << "\n";
+    
+    m = cm / 100;
+
+    double hasilcm = m * m;
+    double BMI = kg / hasilcm;
+
+    if (BMI < 18.5){
+        cout << "Hasil:\n";
+        cout << "BMI      = " << BMI << endl; 
+        cout << "Kategori = Berat badan kurang\n";
+    } else if (BMI >= 18.5 && BMI <= 22.9){
+        cout << "Hasil:\n";
+        cout << "BMI      = " << BMI << endl; 
+        cout << "Kategori = Berat badan normal\n";
+    } else if (BMI >= 23 && BMI <= 29.9){
+        cout << "Hasil:\n";
+        cout << "BMI      = " << BMI << endl; 
+        cout << "Kategori = Berat badan berlebih\n";
+    } else {
+        cout << "Hasil:\n";
+        cout << "BMI      = " << BMI << endl; 
+        cout << "Kategori = Obesitas\n";
+    }
+}
