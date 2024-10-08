@@ -1,0 +1,96 @@
+#include <iostream>
+using namespace std;
+
+#define MAX 5
+
+struct Stack {
+    int top;
+    int arr[MAX];
+
+    // Inisialisasi stack
+    Stack() {
+        top = -1;
+    }
+
+    // Fungsi untuk memasukkan elemen ke stack (Push)
+    void push(int data) {
+        if (top >= (MAX - 1)) {
+            cout << "Stack penuh!" << endl;
+        } else {
+            arr[++top] = data;
+            cout << "Data " << data << " berhasil ditambahkan." << endl;
+        }
+    }
+
+    // Fungsi untuk mengeluarkan elemen dari stack (Pop)
+    void pop() {
+        if (top < 0) {
+            cout << "Stack kosong!" << endl;
+        } else {
+            cout << "Data " << arr[top--] << " berhasil dikeluarkan." << endl;
+        }
+    }
+
+    // Fungsi untuk menampilkan isi stack
+    void display() {
+        if (top < 0) {
+            cout << "Stack kosong!" << endl;
+        } else {
+            cout << "Isi stack: ";
+            for (int i = 0; i <= top; i++) {
+                cout << arr[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    // Fungsi untuk mengosongkan stack
+    void clear() {
+        top = -1;
+        cout << "Stack telah dikosongkan." << endl;
+    }
+};
+
+int main() {
+    Stack stack;
+    int choice, data;
+
+    do {
+        cout << "Implementasi Stack dengan Array" << endl;
+        cout << "=============================" << endl;
+        cout << "Menu:" << endl;
+        cout << "1. Push Data" << endl;
+        cout << "2. Pop Data" << endl;
+        cout << "3. Tampil Isi Stack" << endl;
+        cout << "4. Kosongkan Stack" << endl;
+        cout << "5. Keluar" << endl;
+        cout << "Masukkan pilihan [1..5]: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            cout << "Masukkan data: ";
+            cin >> data;
+            stack.push(data);
+            break;
+        case 2:
+            stack.pop();
+            break;
+        case 3:
+            stack.display();
+            break;
+        case 4:
+            stack.clear();
+            break;
+        case 5:
+            cout << "Keluar program." << endl;
+            break;
+        default:
+            cout << "Pilihan tidak valid." << endl;
+        }
+
+        cout << endl;
+    } while (choice != 5);
+
+    return 0;
+}
